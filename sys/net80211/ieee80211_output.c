@@ -110,8 +110,6 @@ doprint(struct ieee80211vap *vap, int subtype)
 }
 #endif
 
-#define senderr_small(e)
-
 /*
  * Transmit a frame to the given destination on the given VAP.
  *
@@ -549,7 +547,7 @@ ieee80211_output(struct ifnet *ifp, struct mbuf *m,
 #ifdef MAC
 	error = mac_ifnet_check_transmit(ifp, m);
 	if (error)
-		senderr_small(error);
+		senderr(error);
 #endif
 	if (ifp->if_flags & IFF_MONITOR)
 		senderr(ENETDOWN);

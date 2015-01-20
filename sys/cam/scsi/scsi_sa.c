@@ -93,7 +93,7 @@ __FBSDID("$FreeBSD$");
  */
 
 #ifndef	UNUSED_PARAMETER
-#define	UNUSED_PARAMETER(x) (void)(x)
+#define	UNUSED_PARAMETER(x)	x = x
 #endif
 
 #define	QFRLS(ccb)	\
