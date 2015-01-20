@@ -121,6 +121,7 @@ VNET_DEFINE(struct radix_node_head *, rt_tables);
 VNET_DEFINE(int, rttrash);		/* routes not in table but not freed */
 #define	V_rttrash	VNET(rttrash)
 
+#define senderr_small(e)
 
 /*
  * Convert a 'struct radix_node *' to a 'struct rtentry *'.
@@ -1303,7 +1304,7 @@ rtrequest1_fib(int req, struct rt_addrinfo *info, struct rtentry **ret_nrt,
 		if (info->rti_ifa == NULL) {
 			error = rt_getifa_fib(info, fibnum);
 			if (error)
-				senderr(error);
+				senderr_small(error);
 		} else
 			ifa_ref(info->rti_ifa);
 		ifa = info->rti_ifa;
@@ -1321,7 +1322,7 @@ rtrequest1_fib(int req, struct rt_addrinfo *info, struct rtentry **ret_nrt,
 		if ((error = rt_setgate(rt, dst, gateway)) != 0) {
 			ifa_free(ifa);
 			uma_zfree(V_rtzone, rt);
-			senderr(error);
+			senderr_small(error);
 		}
 
 		/*

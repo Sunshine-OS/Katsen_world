@@ -118,6 +118,7 @@ static	void ether_reassign(struct ifnet *, struct vnet *, char *);
 	(bcmp(etherbroadcastaddr, (addr), ETHER_ADDR_LEN) == 0)
 
 #define senderr(e) do { error = (e); goto bad;} while (0)
+#define senderr_small(e)
 
 static void
 update_mbuf_csumflags(struct mbuf *src, struct mbuf *dst)
@@ -168,9 +169,9 @@ ether_output(struct ifnet *ifp, struct mbuf *m,
 			is_gw = 1;
 	}
 #ifdef MAC
-	error = mac_ifnet_check_transmit(ifp, m);
-	if (error)
-		senderr(error);
+	err = mac_ifnet_check_transmit(ifp, m);
+	if (err)
+		senderr_small(err);
 #endif
 
 	M_PROFILE(m);

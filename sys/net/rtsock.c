@@ -126,6 +126,8 @@ int	(*carp_get_vhid_p)(struct ifaddr *);
  */
 #define	RTS_FILTER_FIB	M_PROTO8
 
+#define senderr_small(e)
+
 typedef struct {
 	int	ip_count;	/* attached w/ AF_INET */
 	int	ip6_count;	/* attached w/ AF_INET6 */
@@ -601,7 +603,7 @@ route_output(struct mbuf *m, struct socket *so, ...)
 	if (rtm->rtm_type != RTM_GET) {
 		error = priv_check(curthread, PRIV_NET_ROUTE);
 		if (error)
-			senderr(error);
+			senderr_small(error);
 	}
 
 	/*
@@ -798,7 +800,7 @@ report:
 				    &saun, curthread->td_ucred);
 				if (error != 0) {
 					RT_UNLOCK(rt);
-					senderr(error);
+					senderr_small(error);
 				}
 				if (ifp->if_flags & IFF_POINTOPOINT)
 					info.rti_info[RTAX_BRD] =
