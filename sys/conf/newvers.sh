@@ -30,8 +30,8 @@
 #	@(#)newvers.sh	8.1 (Berkeley) 4/20/94
 # $FreeBSD$
 
-TYPE="FreeBSD"
-REVISION="11.0"
+TYPE="Katsen"
+REVISION="1.0"
 BRANCH="CURRENT"
 if [ "X${BRANCH_OVERRIDE}" != "X" ]; then
 	BRANCH=${BRANCH_OVERRIDE}
