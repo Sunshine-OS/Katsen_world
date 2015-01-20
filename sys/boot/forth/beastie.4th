@@ -171,6 +171,48 @@ variable logoY
  	0 25 at-xy
 ;
 
+: ulx-logo ( x y -- ) \ UNGLinux :)
+
+	2dup at-xy ."                                     .o-" 1+
+	2dup at-xy ."                           :o+     .sNMMh-" 1+
+	2dup at-xy ."                         .dMMM:  .sNMMMMMMh-" 1+
+	2dup at-xy ."                         :hmMMNosNMMMMMMMMMNh." 1+
+	2dup at-xy ."                           `.yMMMMMMMMMMMmo+:" 1+
+	2dup at-xy ."                           .sNMMMMMMMMMMMs    `hy-" 1+
+	2dup at-xy ."                         .oNMMMMMMMMMMMMMMy:``sMMNy-" 1+
+	2dup at-xy ."                       .oNMMMMMMMMMMMMMMMMMNmmMMMMMNy-" 1+
+	2dup at-xy ."                     .+hNMMMMMMMMMMMMMMMMMMMMNMMMMMMMy`" 1+
+	2dup at-xy ."                   .omMNddNMMMMMMMMMMMMMMh++++osdMMh:`" 1+
+	2dup at-xy ."                 .omMMMMMNddNMMMMMMMMMMMo`hNMMMNNh:`" 1+
+	2dup at-xy ."                +mMMMMMMMMMNddMMMMMMMMMMh-:ydNMd/`" 1+
+	2dup at-xy ."                :oydMMMMMNmmmmMNMMMMMMMMMNhs+--`" 1+
+	2dup at-xy ."           `+h-    :MMMMMhNMMMmmdmMMMMMMMMMd/" 1+
+	2dup at-xy ."         `+mMMy` `/mMMMMMNdmNNhMMNdmMMMMMd/`" 1+
+	2dup at-xy ."       `+mMMMMMddmMMMMMMMMMNNNNMMMMNdmNd/`" 1+
+	2dup at-xy ."       oNMMMMMMMMMMMMMMMMMMMMMMMMMMMMdy-" 1+
+	2dup at-xy ."       `:hMMMMMMMMMMMMMMMMMMMMMMMMMmdmMmo." 1+
+	2dup at-xy ."         `:hMMMMMMMMMMMMMMMMMMMMMmdmMMMMMmo." 1+
+	2dup at-xy ."           `/NMMMMMMMMMMMMMMMMMMhmMMMMMMMMMy`" 1+
+	2dup at-xy ."         -/+hMMmMMMMMMMMMMMMMNNMNmmmNMMMMN+`" 1+
+	2dup at-xy ."         hMMMN/`/dMMMMMMMMMNdmmmMMMmmMMMo:    `/+." 1+
+	2dup at-xy ."         `odNs   `/dMMMMMNdmMMMhNNdmMMMM:`  `ohMMm+`" 1+
+	2dup at-xy ."           `.      `/dMNdmMMMMMMNNMMMMMMMh/+hMMMMMMm+`" 1+
+	2dup at-xy ."                     `/yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMh`" 1+
+	2dup at-xy ."                       `/mMMMMMMMMMMMMMMMMMMMMMMMMMmo." 1+
+	2dup at-xy ."                         `+mMMMMMMMMMMMMMMMMMMMMMNo." 1+
+	2dup at-xy ."                           `+NMMMMMMMMMMMMMMMMMMs." 1+
+	2dup at-xy ."                         .-:sNMNMMMMMMMMMMMMMNNMd+:-" 1+
+	2dup at-xy ."                         dMMMM+.+mMMMMMMMMMNs.-mMMMm`" 1+
+	2dup at-xy ."                         .yNNy   `+mMMMMMNs.   +Nms." 1+
+	2dup at-xy ."                           `.      `omMNs.      `" 1+
+	     at-xy ."                                     `+."
+
+	\ Put the cursor back at the bottom
+	0 25 at-xy
+;
+
+
+
 \ This function draws any number of beastie logos at (loader_logo_x,
 \ loader_logo_y) if defined, else (46,4) (to the right of the menu). To choose
 \ your beastie, set the variable `loader_logo' to the respective logo name.
@@ -185,6 +227,7 @@ variable logoY
 \ 	orbbw       B/W ``Orb'' mascot (15 rows x 32 columns)
 \ 	tribute     Color ``Tribute'' (must fit 19 rows x 34 columns) (default)
 \ 	tributebw   B/W ``Tribute'' (must fit 19 rows x 34 columns)
+\   ulx-logo    Classic UNGLinux logo
 \ 
 \ NOTE: Setting `loader_logo' to an undefined value (such as "none") will
 \       prevent beastie from being drawn.

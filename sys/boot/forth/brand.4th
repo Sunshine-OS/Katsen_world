@@ -47,6 +47,19 @@ variable brandY
 	0 25 at-xy
 ;
 
+: katsen-logo ( x y -- ) \ "Katsen" [wide] logo in B/W (7 rows x 42 columns)
+
+ 	2dup at-xy ." _  __          _                        
+ 	2dup at-xy ."| |/ /         | |                       " 1+
+ 	2dup at-xy ."| ' /    __ _  | |_   ___    ___   _ __  " 1+
+ 	2dup at-xy ."|  <    / _` | | __| / __|  / _ \ | '_ \ " 1+
+ 	2dup at-xy ."| . \  | (_| | | |_  \__ \ |  __/ | | | |" 1+
+ 	     at-xy ."|_|\_\  \__,_|  \__| |___/  \___| |_| |_|"
+
+	\ Put the cursor back at the bottom
+	0 25 at-xy
+;
+
 \ This function draws any number of company logos at (loader_brand_x,
 \ loader_brand_y) if defined, or (2,1) (top-left) if not defined. To choose
 \ your logo, set the variable `loader_brand' to the respective logo name.
@@ -84,8 +97,8 @@ variable brandY
 		drop exit
 	then
 
-	2dup s" fbsd" compare-insensitive 0= if
-		brandX @ brandY @ fbsd-logo
+	2dup s" katsen" compare-insensitive 0= if
+		brandX @ brandY @ katsen-logo
 		2drop exit
 	then
 
