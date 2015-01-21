@@ -47,14 +47,14 @@ variable brandY
 	0 25 at-xy
 ;
 
-: katsen-logo ( x y -- ) \ "Katsen" [wide] logo in B/W (7 rows x 42 columns)
+: katsen-logo ( x y -- ) \ "Katsen" [wide] logo in B/W (6 rows x 42 columns)
 
- 	2dup at-xy ." _  __          _                        
- 	2dup at-xy ."| |/ /         | |                       " 1+
- 	2dup at-xy ."| ' /    __ _  | |_   ___    ___   _ __  " 1+
- 	2dup at-xy ."|  <    / _` | | __| / __|  / _ \ | '_ \ " 1+
- 	2dup at-xy ."| . \  | (_| | | |_  \__ \ |  __/ | | | |" 1+
- 	     at-xy ."|_|\_\  \__,_|  \__| |___/  \___| |_| |_|"
+ 	2dup at-xy ."  _  __          _                        
+ 	2dup at-xy ." | |/ /         | |                       " 1+
+ 	2dup at-xy ." | ' /    __ _  | |_   ___    ___   _ __  " 1+
+ 	2dup at-xy ." |  <    / _` | | __| / __|  / _ \ | '_ \ " 1+
+ 	2dup at-xy ." | . \  | (_| | | |_  \__ \ |  __/ | | | |" 1+
+ 	     at-xy ." |_|\_\  \__,_|  \__| |___/  \___| |_| |_|"
 
 	\ Put the cursor back at the bottom
 	0 25 at-xy

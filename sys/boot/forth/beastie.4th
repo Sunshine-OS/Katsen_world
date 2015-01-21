@@ -171,7 +171,7 @@ variable logoY
  	0 25 at-xy
 ;
 
-: ulx-logo ( x y -- ) \ UNGLinux :)
+: ulx-logo ( x y -- ) \ (32 rows x 55 columns)
 
 	2dup at-xy ."                                     .o-" 1+
 	2dup at-xy ."                           :o+     .sNMMh-" 1+
@@ -224,7 +224,8 @@ variable logoY
 \ 	beastiebw   B/W ``Helper Daemon'' mascot (19 rows x 34 columns)
 \ 	fbsdbw      "FreeBSD" logo in B/W (13 rows x 21 columns)
 \ 	orb         Color ``Orb'' mascot (15 rows x 30 columns) (2nd default)
-\ 	orbbw       B/W ``Orb'' mascot (15 rows x 32 columns)
+\ 	
+\       B/W ``Orb'' mascot (15 rows x 32 columns)
 \ 	tribute     Color ``Tribute'' (must fit 19 rows x 34 columns) (default)
 \ 	tributebw   B/W ``Tribute'' (must fit 19 rows x 34 columns)
 \   ulx-logo    Classic UNGLinux logo
@@ -259,9 +260,9 @@ variable logoY
 	0= if
 		drop ( cruft -- )
 		loader_color? if
-			['] orb-logo
+			['] ulx-logo
 		else
-			['] orbbw-logo
+			['] ulx-logo
 		then
 	then
 	logoX @ logoY @ rot execute
