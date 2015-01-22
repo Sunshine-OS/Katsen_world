@@ -553,4 +553,5 @@ const char *syscallnames[] = {
 	"aio_mlock",			/* 543 = aio_mlock */
 	"procctl",			/* 544 = procctl */
 	"ppoll",			/* 545 = ppoll */
+	"nop",			/* 546 = nop */
 };

@@ -410,4 +410,5 @@ MIASM =  \
 	pipe2.o \
 	aio_mlock.o \
 	procctl.o \
-	ppoll.o
+	ppoll.o \
+	nop.o
