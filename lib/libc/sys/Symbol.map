@@ -398,6 +398,7 @@ FBSD_1.3 {
 
 FBSD_1.4 {
 	ppoll;
+	nop;
 };
 
 FBSDprivate_1.0 {
@@ -1050,4 +1051,6 @@ FBSDprivate_1.0 {
 	gssd_syscall;
 	__libc_interposing_slot;
 	__libc_sigwait;
+	_nop;
+	sys_nop;
 };
