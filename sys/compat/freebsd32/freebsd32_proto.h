@@ -693,9 +693,6 @@ struct freebsd32_ppoll_args {
 	char ts_l_[PADL_(const struct timespec32 *)]; const struct timespec32 * ts; char ts_r_[PADR_(const struct timespec32 *)];
 	char set_l_[PADL_(const sigset_t *)]; const sigset_t * set; char set_r_[PADR_(const sigset_t *)];
 };
-struct nop_args {
-	register_t dummy;
-};
 #if !defined(PAD64_REQUIRED) && (defined(__powerpc__) || defined(__mips__))
 #define PAD64_REQUIRED
 #endif
