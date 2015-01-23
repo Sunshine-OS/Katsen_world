@@ -142,7 +142,7 @@ common_head = \
     " * This file is produced automatically.\n" \
     " * Do not modify anything in here by hand.\n" \
     " *\n" \
-    " * Created from $FreeBSD$\n" \
+    " * Created from $Katsen$\n" \
     " */\n" \
     "\n";
 

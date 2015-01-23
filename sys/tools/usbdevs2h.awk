@@ -46,6 +46,8 @@ function header(file)
 		printf("/* \$FreeBSD\$ */\n\n") > file
 	else if (os == "OpenBSD")
 		printf("/*\t\$OpenBSD\$\t*/\n\n") > file
+	else if (os == "Katsen")
+		printf("/*\t\$Katsen\$\t*/\n\n") > file
 	else
 		printf("/* ??? */\n\n") > file
 	printf("/*\n") > file
