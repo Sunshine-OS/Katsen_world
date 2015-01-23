@@ -1069,4 +1069,4 @@
 545	AUE_POLL	STD	{ int freebsd32_ppoll(struct pollfd *fds, \
 				    u_int nfds, const struct timespec32 *ts, \
 				    const sigset_t *set); }
-546    NOP              STD     { void nop(); }
+546    FREEBSD32_NOP              STD     { void nop(); }

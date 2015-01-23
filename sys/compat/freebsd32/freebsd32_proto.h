@@ -1244,7 +1244,7 @@ int	freebsd7_freebsd32_shmctl(struct thread *, struct freebsd7_freebsd32_shmctl_
 #define	FREEBSD32_SYS_AUE_freebsd32_procctl	AUE_NULL
 #define	FREEBSD32_SYS_AUE_freebsd32_procctl	AUE_NULL
 #define	FREEBSD32_SYS_AUE_freebsd32_ppoll	AUE_POLL
-#define	FREEBSD32_SYS_AUE_nop	NOP
+#define	FREEBSD32_SYS_AUE_nop	FREEBSD32_NOP
 
 #undef PAD_
 #undef PADL_

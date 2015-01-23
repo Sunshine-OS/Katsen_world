@@ -616,5 +616,5 @@ struct sysent freebsd32_sysent[] = {
 	{ AS(freebsd32_procctl_args), (sy_call_t *)freebsd32_procctl, AUE_NULL, NULL, 0, 0, 0, SY_THR_STATIC },	/* 544 = freebsd32_procctl */
 #endif
 	{ AS(freebsd32_ppoll_args), (sy_call_t *)freebsd32_ppoll, AUE_POLL, NULL, 0, 0, 0, SY_THR_STATIC },	/* 545 = freebsd32_ppoll */
-	{ 0, (sy_call_t *)sys_nop, NOP, NULL, 0, 0, 0, SY_THR_STATIC },		/* 546 = nop */
+	{ 0, (sy_call_t *)sys_nop, FREEBSD32_NOP, NULL, 0, 0, 0, SY_THR_STATIC },	/* 546 = nop */
 };
